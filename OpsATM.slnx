@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="OpsATM.Application/OpsATM.Application.csproj" />
+  <Project Path="OpsATM.Domain/OpsATM.Domain.csproj" />
+  <Project Path="OpsATM.Infrastructure/OpsATM.Infrastructure.csproj" />
   <Project Path="OpsATM/OpsATM.csproj" />
 </Solution>

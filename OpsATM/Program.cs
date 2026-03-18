@@ -1,4 +1,11 @@
 
+using Microsoft.EntityFrameworkCore;
+using OpsATM.Application.Interface;
+using OpsATM.Application.Interfaces;
+using OpsATM.Application.Services;
+using OpsATM.Infrastructure.Data;
+using OpsATM.Infrastructure.Services;
+
 namespace OpsATM
 {
     public class Program
@@ -13,6 +20,11 @@ namespace OpsATM
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+
 
             var app = builder.Build();
 
