@@ -34,7 +34,7 @@ jobs:
 
     - name: Copy Files
       run: |
-        xcopy D:\Publish\Backend\opsatm C:\inetpub\wwwroot\opsatm /E /Y
+        xcopy C:\deploy\opsatm C:\inetpub\wwwroot\opsatm /E /Y
 
     - name: Start IIS
       run: |
